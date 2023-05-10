@@ -28,8 +28,8 @@ export default class TodoApp extends Component {
     // const allitems = this.state.items;
     // allitems.splice(key, 1);
     this.setState({
-    //   items: allitems,
-      items: this.state.items.filter((data,index)=>index !== key),
+      //   items: allitems,
+      items: this.state.items.filter((data, index) => index !== key),
     });
   };
   render() {
@@ -49,13 +49,19 @@ export default class TodoApp extends Component {
         </form>
         <ul>
           {items.map((data, index) => (
-            <li key={index}>
+            <li className="" key={index}>
               {data}
+              <div className="iconToEnd">
+              <i
+                className="fa-regular fa-pen-to-square"
+                style={{ color: "#b5b5b5" }}
+              ></i>
               <i
                 className="fa-regular fa-trash-can"
                 onClick={() => this.deleteItem(index)}
                 style={{ color: "#b5b5b5" }}
               ></i>
+              </div>
             </li>
           ))}
         </ul>
